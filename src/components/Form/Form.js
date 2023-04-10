@@ -13,6 +13,7 @@ class Form extends Component {
 
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
+    console.log(this.state);
   };
 
   handleSubmit = (event) => {
@@ -25,6 +26,7 @@ class Form extends Component {
       <>
         <form>
           <select
+            name="stanceValue"
             value={this.state.stanceValue}
             onChange={(event) => this.handleChange(event)}
           >
@@ -42,6 +44,7 @@ class Form extends Component {
             onChange={(event) => this.handleChange(event)}
           />
           <select
+            name="obstacleValue"
             value={this.state.obstacleValue}
             onChange={(event) => this.handleChange(event)}
           >
