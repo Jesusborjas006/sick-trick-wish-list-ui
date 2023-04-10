@@ -36,4 +36,16 @@ describe("Main page", () => {
       .should("be.visible")
       .contains("ledge");
   });
+
+  it("Should check data that is selected inside ther input fields", () => {
+    cy.get('[name="stance"]').select("Regular");
+    cy.get('[name="name"]').type("New Trick");
+    cy.get('[name="obstacle"]').select("Rail");
+    cy.get('[name="tutorial"]').type("https://google.com/");
+  });
+
+  it("Should display a new trick to page when button is clicked", () => {
+    cy.get('form').submit()
+    // cy.get(".tricks-container > :nth-child(4)")
+  })
 });
