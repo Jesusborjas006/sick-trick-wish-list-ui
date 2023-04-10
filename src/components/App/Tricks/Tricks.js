@@ -1,11 +1,13 @@
 import Card from "../Card/Card";
 import "./Tricks.css";
 
-const Tricks = () => {
+const Tricks = (props) => {
+  const cardElements = props.allTricks.map((card) => (
+    <Card name={card.name} id={card.id} key={card.id} />
+  ));
   return (
-    <div>
-      <h1>Ideas go here</h1>
-      <Card />
+    <div className="tricks-container">
+      {cardElements}
     </div>
   );
 };
