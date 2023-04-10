@@ -1,5 +1,13 @@
-describe("Home page", () => {
-  it("passes", () => {
+describe("Main page", () => {
+  // beforeEach(() => {
+  //   cy.intercept("GET", "http://localhost:3001/api/v1/tricks", {
+  //     statusCode: 200,
+  //     fixture: "tricks.json",
+  //   });
+  //   cy.visit("http://localhost:3000/");
+  // });
+
+  it("Should visit the home page", () => {
     cy.visit("http://localhost:3000/");
   });
 
