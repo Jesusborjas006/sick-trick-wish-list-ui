@@ -1,4 +1,5 @@
 import { Component } from "react/cjs/react.production.min";
+import "./Form.css";
 
 class Form extends Component {
   constructor() {
@@ -13,7 +14,6 @@ class Form extends Component {
 
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
-    console.log(this.state);
   };
 
   handleSubmit = (event) => {
@@ -24,7 +24,7 @@ class Form extends Component {
     };
     console.log("New Trick", newTrick);
     this.props.newTrickMethod(newTrick);
-    console.log("On Submit", this.state);
+    this.clearInputs();
   };
 
   clearInputs = () => {

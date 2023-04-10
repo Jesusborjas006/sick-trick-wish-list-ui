@@ -1,6 +1,7 @@
 .tricks-container {
-  border: 2px solid red;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  width: 90vw;
+  margin: 0 auto;
 }
