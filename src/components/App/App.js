@@ -19,11 +19,15 @@ class App extends Component {
       });
   };
 
+  addNewTrick = (newTrick) => {
+    this.setState({ tricks: [...this.state.tricks, newTrick] });
+  };
+
   render() {
     return (
       <div className="App">
         <h1>Sick Trick Wish List</h1>
-        <Form />
+        <Form newTrickMethod={this.addNewTrick} />
         <Tricks allTricks={this.state.tricks} />
       </div>
     );

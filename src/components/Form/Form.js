@@ -4,9 +4,9 @@ class Form extends Component {
   constructor() {
     super();
     this.state = {
-      stanceValue: "",
-      trick: "",
-      obstacleValue: "",
+      stance: "",
+      name: "",
+      obstacle: "",
       tutorial: "",
     };
   }
@@ -18,7 +18,17 @@ class Form extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Submitted");
+    const newTrick = {
+      id: Date.now(),
+      ...this.state,
+    };
+    console.log("New Trick", newTrick);
+    this.props.newTrickMethod(newTrick);
+    console.log("On Submit", this.state);
+  };
+
+  clearInputs = () => {
+    this.setState({ stance: "", name: "", obstacle: "", tutorial: "" });
   };
 
   render() {
@@ -26,8 +36,8 @@ class Form extends Component {
       <>
         <form>
           <select
-            name="stanceValue"
-            value={this.state.stanceValue}
+            name="stance"
+            value={this.state.stance}
             onChange={(event) => this.handleChange(event)}
           >
             <option value="" disabled>
@@ -38,14 +48,14 @@ class Form extends Component {
           </select>
           <input
             type="text"
-            name="trick"
+            name="name"
             placeholder="Name of Trick"
-            value={this.state.trick}
+            value={this.state.name}
             onChange={(event) => this.handleChange(event)}
           />
           <select
-            name="obstacleValue"
-            value={this.state.obstacleValue}
+            name="obstacle"
+            value={this.state.obstacle}
             onChange={(event) => this.handleChange(event)}
           >
             <option value="" disabled>
