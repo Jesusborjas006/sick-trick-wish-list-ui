@@ -1,6 +1,6 @@
 import { Component } from "react";
 import "./App.css";
-import Tricks from "./Tricks/Tricks";
+import Tricks from "../Tricks/Tricks";
 
 class App extends Component {
   constructor() {
