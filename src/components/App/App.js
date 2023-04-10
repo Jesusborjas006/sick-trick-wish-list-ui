@@ -6,22 +6,17 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      tricks: [
-        {
-          id: 1,
-          name: "treflip",
-        },
-        {
-          id: 2,
-          name: "heelflip",
-        },
-        {
-          id: 3,
-          name: "frontside 50-50, backside 180 out",
-        },
-      ],
+      tricks: [],
     };
   }
+
+  componentDidMount = () => {
+    fetch("http://localhost:3001/api/v1/tricks")
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ tricks: data });
+      });
+  };
 
   render() {
     return (
